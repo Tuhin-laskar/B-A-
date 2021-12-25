@@ -34,7 +34,7 @@ function setup() {
  	boxLeftBody = new Box(310, 570, 20,100);
  	boxRightBody = new Box(490, 570, 20,100);
 
-	packageBody = Bodies.circle(width/2 , 100 , 20 , {restitution:0.4, isStatic:false});
+	packageBody = Bodies.circle(width/2 , 100 , 20 , {restitution:0.4, isStatic:true});
 	World.add(world, packageBody);
 
 }
@@ -73,7 +73,7 @@ function keyPressed() {
 	if (keyCode === DOWN_ARROW) {
 	
 	   //make the static property of packageBody as true
-
+   Matter.Body.setStatic(packageBody,false)
 	}
 }
   
